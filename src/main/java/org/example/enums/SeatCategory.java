@@ -1,5 +1,5 @@
-package org.example.model.theatre;
+package org.example.enums;
 
-public class SeatCategory {
-    
+public enum SeatCategory {
+    SILVER, GOLD, PLATINUM;
 }
