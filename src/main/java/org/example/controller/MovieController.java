@@ -8,9 +8,9 @@ import java.util.*;
 
 public class MovieController {
 
-    private final Map<City, List<Movie>> cityWithMovies;
+    private final Map<City, List<Movie>> cityWithMovies; // city wise movie displaced
     private final Map<String, Movie> movieByName; // New: for faster lookups by name
-    private final Set<Movie> allMovies;
+    private final Set<Movie> allMovies; // collect all movies name
 
     public MovieController(){
         cityWithMovies = new HashMap<>();
@@ -42,7 +42,7 @@ public class MovieController {
 //        }
 //        return null;
     }
-    // ✅ Get all movies by city
+    // Get all movies by city
     public List<Movie> getMoviesByCity(City city){
         return cityWithMovies.get(city);
     }
