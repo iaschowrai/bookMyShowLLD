@@ -26,9 +26,6 @@ public class TheaterController {
     /**
      * Adds a theatre to a city and the global theatre list.
      * Example: addTheatre(new Theatre("PVR", ...), City.DELHI);
-     *
-     * @param theatre Theatre object
-     * @param city    City enum
      */
     public void addTheatre (Theatre theatre, City city){
         allTheatre.add(theatre);
@@ -37,13 +34,12 @@ public class TheaterController {
 
     public Map<Theatre, List<Show>> getAllShow(Movie movie, City city){
 
-        // get all theatre from the city
         Map<Theatre, List<Show>> theatreByShow = new HashMap<>();
+
         if (movie == null || city == null) return theatreByShow;
 
         List<Theatre> theatres = cityWithTheatre.getOrDefault(city, Collections.emptyList());
-        // theatre = Delhi => PVR, INOX
-        // Filter the theatres which run the movie
+
 
         for (Theatre theatre : theatres){
             List<Show> shows = theatre.getShows();
@@ -62,7 +58,6 @@ public class TheaterController {
         }
         return theatreByShow;
     }
-
 
 
 
